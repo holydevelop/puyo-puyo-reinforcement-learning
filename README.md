@@ -1,53 +1,14 @@
-# Implement puyopuyo on python.  
+# Puyo Puyo para aprendizaje por refuerzo
+Estudiantes de la Universidad Andres Bello realizan un proyecto para el ramo de Desarrollo de Inteligencia Artificial en el cual se eligio un tema el cual fue Aprendizaje por Refuerzo, realizando la investagcion se utilizo de referencia el juego Puyo Puyo para poder intentar que el modelo aprenda mediante tecnicas de reinforcement learning.
 
-## For my master research.  
+# Referencia
+El codigo de **puyo puyo on python** no es de nuestra propiedad y utilizamos de referencia el codigo del usuario nicked4 , se realizo modificaciones para la utilizacion del juego como entorno para un aprendizaje por refuerzo y asi poder entrenar nuestro modelo.
 
-I research deep reinforcement learning as a master student.  
-My research theme is applying RL for puyopuyo to create strong game AI.  
-I develop with python, so I had to implement puyopuyo simulator on python.  
+GitHub utilizado para este proyecto: https://github.com/nicked4/puyopuyo_on_python
 
-This program has tokoton puyopuyo mode only(for one person).  
-So, I should implement battle mode sometime.  
-Special library used on this program is pygame only.  
+# Explicacion archivos de referencia
 
-| File name | Use |
-|---|---|
-| **puyo_class.py** | Super class of following 3 files |
-| **puyo_environment.py** | For play |
-| **puyo_simulator.py** | Simulator specialized for experiment |
-| **puyo_AIplay.py** | Demonstration by AI |
-
-## Explanation about "puyo_simulator.py" operation
-| Method | Operation |
-|---|---|
-| **get_state** | Get field and tsumo states |
-| **rl_step(num)** | Command agent to act in response to the num |
-| **random_action** | Command agent to act randomly |
-
-![puyoAIdemo200116gif](https://user-images.githubusercontent.com/51912962/74588418-a9ca7180-503f-11ea-9864-b0723a8152b7.gif)
-
-# python上でのぷよぷよ開発
-
-## 修士研究用のプログラム
-
-私は修士研究のテーマとして、ぷよぷよに深層強化学習を応用して強いAIをつくる、といったことを扱っている。  
-開発はpythonで行っているため、pythonでぷよぷよのシミュレータを作成する必要があった（それ以外の方法もあるが）。  
-
-このプログラムは一人用モードのとことんぷよぷよのみしか実装していない。  
-いずれは対戦なども見据えているため、そちらの開発もする必要がある。  
-しかし、まずは一人用で強いAIができることが大前提のため、そちらの方は追々の実装になる。  
-このプログラムで用いている特別なライブラリはpygameくらいである。  
-
-| ファイル名 | 用途 |
-|---|---|
-| **puyo_class.py** | 次の3つのファイルのスーパークラス |
-| **puyo_environment.py** | ゲームをプレーできるクラス |
-| **puyo_simulator.py** | 学習に用いるシミュレータ |
-| **puyo_AIplay.py** | AIによるデモンストレーション |
- 
- ## "puyo_simulator.py"の操作方法について
-| メソッド | 動作 |
-|---|---|
-| **get_state** | フィールドとツモの状態を取得する |
-| **rl_step(num)** | numの値に応じた行動をAgentに行わせる |
-| **random_action** | ランダムな行動をAgentに行わせる |
+Una explicacion de los archivos que vienen del github clonado y nombrado anteriormente, para entender los archivos tenemos los siguiente:
+1) puyo_class.py el cual contiene todo lo principal del juego, este se analizo para entender que variables tenia disponible y es la clase padre de otros archivos.
+2) puyo_AIplay.py es el cual intentaremos modificar para que juegue nuestro agente y tambien aprenda , todo se desarrollara en este entorno para posteriormente si es posible lograr que juegue directamente en RetroArch que es un emulador que tendra el juego Kirby's Avalanche.
+3) DeepTrainLearning es un archivo donde se añadira el modelo y se integrara todo el algoritmo de aprendizaje para asi tener el codigo mas ordenado, ademas las modificaciones se iran realizando en el respectivo archivo.

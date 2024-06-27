@@ -40,7 +40,7 @@ class Player(puyo_class.PuyoSuper):
             self.tsumo()
             self.ai_action = self.agent.sampleAction()
             self.action_distribution[self.ai_action] += 1
-            print(self.gameover)
+            #print(self.ai_action)
             self.ai_action_controller = 0
 
         # AIに実際に行動をさせる
@@ -91,7 +91,17 @@ class Player(puyo_class.PuyoSuper):
             if self.is_gameover():
                 self.step = 9
                 #Se añadio self.reset para que se reinicie el juego cada vez que se pierde 
-                self.reset()
+                # Formato de la linea 95 (Epoca en variable , Epoca impresa)
+                # 0,1 1,2 2,3 3,4 4,5 5,6 6,7 7,8 8,9 9,10 
+                print(f'Epoca {self.agent.act_epoch + 1}') # Variable que imprimira la epoca del agente
+                self.agent.act_epoch += 1 # Se actualiza la epoca del agente
+
+                # Si se llega a la decima epoca entonces no se reiniciara mas el juego
+                if(self.agent.act_epoch != 10): # Se añadio un limite de 10 epocas para que el juego no se cierre
+                    self.reset()
+                else:
+                    print("Epocas finalizadas con exito")
+
             else:
                 if self.is_all_clear():
                     self.all_clear_flag = True

@@ -61,9 +61,8 @@ class DeepQLearning:
     # Neural Network
     loss_fn = nn.MSELoss()          # NN Loss function. MSE=Mean Squared Error can be swapped to something else.
     optimizer = None                # NN Optimizer. Initialize later.
-
-    def train():
-        pass
+    max_epochs = 100
+    act_epoch = 0
 
     def sampleAction(self):
         return np.random.randint(0, 22)
